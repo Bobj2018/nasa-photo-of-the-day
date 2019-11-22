@@ -12,12 +12,16 @@ export default function PhotoCard({ title, date, hdurl, explanation, changeDate 
 					<img src={hdurl} width="100%" />
 					<h2>{title}</h2>
                     <DateTime
+                    value={date}
 					dateFormat="YYYY-MM-DD"
-					timeFormat={false}
+                    timeFormat={false}
+                    closeOnSelect={true}
 					onChange={(info) => {
-                        let setDate = `${info.get('year')}-${info.get('month')}-${info.get('date')}`
+                        let setDate = `${info.get('year')}-${info.get('month')}-${info.get('date')}` 
                         console.info(setDate);
+                        
                         changeDate(setDate)
+                         //STEP 3: RUN changeDate
                        
 					}}
 				/>
